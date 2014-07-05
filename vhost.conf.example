@@ -1,0 +1,29 @@
+<VirtualHost *:80>
+   ServerName wpcomposer.dev
+   ServerAdmin root@localhost
+
+   ## Vhost docroot
+   DocumentRoot "/var/www/wp-composer/public"
+
+
+
+   ## Directories, there should at least be a declaration for /var/www
+
+
+   <Directory "/var/www/wp-composer/public">
+     Options Indexes FollowSymLinks MultiViews
+     AllowOverride All
+     Order allow,deny
+     Allow from all
+   </Directory>
+
+   ## Load additional static includes
+
+
+   ## Logging
+   ErrorLog "/var/log/apache2/default_error.log"
+   ServerSignature Off
+   CustomLog "/var/log/apache2/access.log" combined
+
+
+
