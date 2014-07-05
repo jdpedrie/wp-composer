@@ -1,0 +1,23 @@
+{
+    "name": "jdpedrie/wp-composer",
+    "description": "WordPress loaded via Composer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John Pedrie",
+            "email": "john@pedrie.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "johnpbloch/wordpress": "~3.9"
+    },
+    "extra": {
+        "wordpress-install-dir": "public/wordpress",
+        "installer-paths": {
+            "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/wp-content/themes/{$name}/": ["type:wordpress-theme"],
+            "public/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+        }
+    }
+}
